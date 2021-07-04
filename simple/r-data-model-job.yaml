@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rdatamodeler
+spec:
+  template:
+    spec:
+      containers:
+      - name: main
+        image: xnonr/rdatamodeler
+        command: []
+        args: []
+        env:
+        - name: auto
+          value: "TRUE"
+      restartPolicy: Never
+  backoffLimit: 4
