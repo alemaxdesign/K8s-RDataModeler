@@ -13,5 +13,13 @@ spec:
         env:
         - name: auto
           value: "TRUE"
+        volumeMounts:
+        - mountPath: /src/commands.csv
+          name: commandfile
+      volumes:
+      - name: commandfile
+        hostPath:
+          path: /home/kubedge/proj/jbrette/K8s-RDataModeler/simple/commands.csv
+          type: File
       restartPolicy: Never
   backoffLimit: 4
