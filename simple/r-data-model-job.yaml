@@ -19,7 +19,7 @@ spec:
       volumes:
       - name: commandfile
         hostPath:
-          path: /home/kubedge/proj/jbrette/K8s-RDataModeler/simple/commands.csv
+          path: /home/jbrette/K8s-RDataModeler/simple/commands.csv
           type: File
       restartPolicy: Never
   backoffLimit: 4
