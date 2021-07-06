@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rdatamodeler-churn
+spec:
+  template:
+    spec:
+      containers:
+      - name: main
+        image: xnonr/rdatamodeler
+        command: []
+        args: []
+        env:
+        - name: auto
+          value: "TRUE"
+        volumeMounts:
+        - mountPath: /src/commands.csv
+          name: commandfile
+        - mountPath: /src/output.xlsx
+          name: outputfile
+      volumes:
+      - name: commandfile
+        hostPath:
+          path: /home/maxbrette/Documents/alemaxdesign/K8s-RDataModeler/Churn/commands.csv
+          type: File
+      - name: outputfile
+        hostPath:
+          path: /home/maxbrette/Documents/alemaxdesign/K8s-RDataModeler/Churn/output.xlsx
+          type: File
+      restartPolicy: Never
+  backoffLimit: 4
