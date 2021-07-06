@@ -16,16 +16,16 @@ spec:
         volumeMounts:
         - mountPath: /src/commands.csv
           name: commandfile
-        - mountPath: /root/output.xlsx
+        - mountPath: /src/output.xlsx
           name: outputfile
       volumes:
       - name: commandfile
         hostPath:
-          path: /home/jbrette/K8s-RDataModeler/simple/commands.csv
+          path: /home/maxbrette/Documents/alemaxdesign/K8s-RDataModeler/simple/commands.csv
           type: File
       - name: outputfile
         hostPath:
-          path: /home/jbrette/K8s-RDataModeler/simple/output.xlsx
+          path: /home/maxbrette/Documents/alemaxdesign/K8s-RDataModeler/simple/output.xlsx
           type: File
       restartPolicy: Never
   backoffLimit: 4
